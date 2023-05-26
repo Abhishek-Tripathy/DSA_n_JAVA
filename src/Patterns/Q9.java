@@ -7,16 +7,24 @@ public class Q9 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        for(int i=1; i<n; i++){
-            for(int j=n-i; j>=1; j--){
-                System.out.printf(" ");
+        int currRow = 1;
+        int spaces = n-1;
+        int stars = 1;
+
+        while(currRow<=n){
+            int i = 1;
+            while(spaces>=i){
+                System.out.print("  ");
+                i++;
             }
-            for(int k=1; k<i*2; k++){
-                System.out.printf("*");
+            int j = 1;
+            while(stars>=j){
+                System.out.print("* ");
+                j++;
             }
-            for(int l=n-i; l>=1; l--){
-                System.out.printf(" ");
-            }
+            stars+=2;
+            spaces--;
+            currRow++;
             System.out.println();
         }
     }

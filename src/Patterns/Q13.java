@@ -2,31 +2,29 @@ package Patterns;
 
 import java.util.Scanner;
 
-public class Q6 {
+public class Q13 {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
         int currRow = 1;
-        int spaces = 0;
-        int stars = n;
 
-        while(currRow<=n){
-            int i = 1;
-            while(spaces>=i){
-                System.out.print("   ");
-                i++;
-            }
+        int stars = 1;
+
+        while(currRow<=2*n-1){
             int j = 1;
             while(stars>=j){
-                System.out.print("*  ");
+                System.out.print("* ");
                 j++;
             }
-            stars--;
-            spaces+=2;
+            if(currRow>=n){
+                stars--;
+            }else {
+                stars += 1;
+            }
             currRow++;
             System.out.println();
         }
-
-        }
+    }
 }

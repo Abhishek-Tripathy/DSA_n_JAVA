@@ -7,20 +7,25 @@ public class Q5 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int currRow = 0;
-        while(currRow<n){
-            int i=1;
-            while(i<=currRow){
+        int currRow = 1;
+        int spaces = 0;
+        int stars = n;
+
+        while(currRow<=n){
+            int i = 1;
+            while(spaces>=i){
                 System.out.print("  ");
                 i++;
             }
-            int star = n;
-            while (star>currRow){
-                System.out.print(" *");
-                star--;
+            int j = 1;
+            while(stars>=j){
+                System.out.print("* ");
+                j++;
             }
-            System.out.println();
+            stars--;
+            spaces++;
             currRow++;
+            System.out.println();
         }
     }
 }
